@@ -1,0 +1,47 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.studyplanner">
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:theme="@style/Theme.StudyPlanner"
+        android:label="@string/app_name"
+        android:allowBackup="true"
+        android:supportsRtl="true">
+
+        <!-- 🔹 Splash Screen (Launcher) -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:noHistory="true">
+
+        <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 🔹 Main Dashboard -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="Study Planner" />
+
+        <!-- 🔹 Other Screens -->
+        <activity android:name=".LoginActivity" android:exported="true" />
+        <activity android:name=".SignupActivity" android:exported="true" />
+        <activity android:name=".AccountActivity" android:exported="true" />
+        <activity android:name=".AddEditActivity" android:exported="true" />
+        <activity android:name=".AddSessionActivity" android:exported="true" />
+        <activity android:name=".TimetableActivity" android:exported="true" />
+        <activity android:name=".ProgressActivity" android:exported="true" />
+        <activity android:name=".AllSessionsActivity" />
+        <activity android:name=".NotesActivity" />
+
+
+
+
+
+    </application>
+</manifest>
+

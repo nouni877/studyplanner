@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/navy_blue"
+        android:elevation="4dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/navy_blue"
+            app:title="Progress"
+            app:titleTextColor="@color/white"
+            app:navigationIconTint="@color/white"
+            app:navigationIcon="@drawable/ic_arrow_back" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Study Progress"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/navy_blue"
+                android:layout_marginBottom="20dp" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/circularProgress"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginBottom="16dp"
+                app:indicatorSize="150dp"
+                app:trackThickness="12dp"
+                app:indicatorInset="6dp"
+                app:indicatorDirectionCircular="clockwise"
+                app:indicatorColor="@color/navy_blue"
+                app:trackColor="@color/white"
+                app:showAnimationBehavior="inward"
+                app:hideAnimationBehavior="outward" />
+
+            <TextView
+                android:id="@+id/tvPercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="70%"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/navy_blue"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/tvSessions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7 of 10 plannerSessions completed"
+                android:textSize="16sp"
+                android:textColor="@color/navy_blue"
+                android:layout_marginBottom="30dp" />
+
+            <!-- Weekly Progress Bar -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weekly Progress"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/navy_blue"
+                android:layout_marginBottom="8dp" />
+
+            <ProgressBar
+                android:id="@+id/weeklyProgress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:max="100"
+                android:progress="50"
+                android:progressTint="@color/navy_blue"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="30dp" />
+
+            <!-- Motivation Text -->
+            <TextView
+                android:id="@+id/tvMotivation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Keep it up! You're doing great 💪"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                android:textColor="@color/navy_blue" />
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reset Progress"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/navy_blue"
+                android:layout_marginTop="24dp"
+                android:padding="12dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+
+
+
+

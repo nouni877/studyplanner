@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/light_gray"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/navy_blue"
+        android:paddingTop="35dp"
+        android:elevation="6dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:title="Add Study Session"
+            app:titleTextColor="@color/white"
+            app:navigationIconTint="@color/white"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            android:background="@color/navy_blue" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_background"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:elevation="5dp"
+                android:layout_marginBottom="24dp">
+
+                <!-- Title -->
+                <EditText
+                    android:id="@+id/editTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Session Title"
+                    android:textColor="@color/navy_blue"
+                    android:textColorHint="@color/navy_blue"
+                    android:backgroundTint="@color/navy_blue"
+                    android:drawableStart="@drawable/ic_book"
+                    android:drawablePadding="8dp" />
+
+                <!-- Description -->
+                <EditText
+                    android:id="@+id/editNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Description"
+                    android:layout_marginTop="16dp"
+                    android:minLines="3"
+                    android:gravity="top"
+                    android:textColor="@color/navy_blue"
+                    android:textColorHint="@color/navy_blue"
+                    android:backgroundTint="@color/navy_blue"
+                    android:drawableStart="@drawable/ic_notes"
+                    android:drawablePadding="8dp" />
+
+                <!-- Date Picker -->
+                <Button
+                    android:id="@+id/btnSelectDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select Date"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_button_light"
+                    android:layout_marginTop="20dp" />
+
+                <!-- Time Picker -->
+                <Button
+                    android:id="@+id/btnSelectTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select Time"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_button_light"
+                    android:layout_marginTop="12dp" />
+            </LinearLayout>
+
+            <!-- Save Button -->
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SAVE"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/navy_blue"
+                android:elevation="4dp"
+                android:padding="14dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp" />
+
+            <Spinner
+                android:id="@+id/spinnerDay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/days_array"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+
+
+
