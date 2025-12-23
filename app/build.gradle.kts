@@ -35,6 +35,7 @@ android {
 }
 
 dependencies {
+
     // ✅ Core Android libraries
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.7.0")
@@ -45,24 +46,16 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:23.1.0")
     implementation("com.google.firebase:firebase-firestore:25.1.0")
 
-    // ✅ Credentials API (compatible with compileSdk 34)
+    // ✅ Credentials API
     implementation("androidx.credentials:credentials:1.2.2")
     implementation("androidx.credentials:credentials-play-services-auth:1.2.2")
 
-    // ✅ Optional: Google Sign-In support (if you plan to use it)
+    // ✅ Google Sign-In
     implementation("com.google.android.gms:play-services-auth:21.2.0")
 
-// ✅ Room Database dependencies
+    // ✅ Room Database (ONLY ONCE)
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
     kapt("androidx.room:room-compiler:2.6.1")
-
-
-// ✅ Kotlin extensions and coroutine support for Room
-    implementation("androidx.room:room-ktx:2.6.1")
-
-// ✅ If your Gradle uses Kotlin (which it does, because it's .kts)
-    kapt("androidx.room:room-compiler:2.6.1")
-
-
 }
+
