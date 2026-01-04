@@ -23,19 +23,19 @@ public interface SessionDao {
     @Delete
     void deleteSession(PlannerSession session);
 
-    // ✅ All sessions for a specific user (for main list / timetable)
+    // All sessions for a specific user (for main list / timetable)
     @Query("SELECT * FROM sessions WHERE username = :username ORDER BY id DESC")
     List<PlannerSession> getAllSessionsForUser(String username);
 
-    // ✅ Get a specific session by ID
+    // Get a specific session by ID
     @Query("SELECT * FROM sessions WHERE id = :id LIMIT 1")
     PlannerSession getSessionById(int id);
 
-    // ✅ Total sessions for a specific user (for progress screen)
+    // Total sessions for a specific user (for progress screen)
     @Query("SELECT COUNT(*) FROM sessions WHERE username = :username")
     int getTotalSessionsForUser(String username);
 
-    // ✅ Completed sessions for a specific user (for progress screen)
+    // Completed sessions for a specific user (for progress screen)
     @Query("SELECT COUNT(*) FROM sessions WHERE username = :username AND completed = 1")
     int getCompletedSessionsForUser(String username);
 }

@@ -30,12 +30,12 @@ public class AccountActivity extends AppCompatActivity {
         }
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
-        //  start UI elements
+        //start UI elements
         textUsername = findViewById(R.id.textUsername);
         textMotivation = findViewById(R.id.textMotivation);
         btnLogout = findViewById(R.id.btnLogout);
 
-        //  Retrieve the *current* logged-in user
+        // Retrieve the *current* logged-in user
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         String currentUser = prefs.getString(KEY_CURRENT_USER, "User");
 
@@ -43,7 +43,7 @@ public class AccountActivity extends AppCompatActivity {
         textUsername.setText("Welcome, " + currentUser + "!");
 
 
-        //  Display a motivational message
+        // Display a motivational message
         textMotivation.setText("Stay consistent — every small step counts!");
 
         // Logout logic

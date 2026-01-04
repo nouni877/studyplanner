@@ -9,18 +9,18 @@ public class PlannerSession {
     @PrimaryKey(autoGenerate = true)
     private int id;
 
-    private String username; // 👈 owner of the session
+    private String username;
     private String title;
     private String day;
     private String time;
     private String notes;
     private boolean completed;
 
-    // ✅ Empty constructor (required by Room)
+    // Empty constructor (required by Room)
     public PlannerSession() {
     }
 
-    // ✅ Custom constructor for easier creation
+    // Custom constructor for easier creation
     public PlannerSession(String username, String title, String day, String time, String notes, boolean completed) {
         this.username = username;
         this.title = title;
@@ -30,7 +30,7 @@ public class PlannerSession {
         this.completed = completed;
     }
 
-    // ----- Getters and Setters -----
+    // Getters and Setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 

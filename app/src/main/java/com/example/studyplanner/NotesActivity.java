@@ -50,7 +50,7 @@ public class NotesActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.getNavigationIcon().setTint(getResources().getColor(android.R.color.white)); // ✅ force white tint
+        toolbar.getNavigationIcon().setTint(getResources().getColor(android.R.color.white)); // force white tint
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
 

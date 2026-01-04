@@ -77,7 +77,6 @@
                 android:textColor="@color/navy_blue"
                 android:layout_marginBottom="30dp" />
 
-            <!-- Weekly Progress Bar -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

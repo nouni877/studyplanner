@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // ---- Find views (strict id match to your XML) ----
         textQuote = findViewById(R.id.textQuote);
         recyclerMainSessions = findViewById(R.id.recyclerMainSessions);
         emptyMessage = findViewById(R.id.emptyMessage);
@@ -42,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         FloatingActionButton fabAdd = findViewById(R.id.ic_add);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-        // Safety: if any is null, fail fast with a helpful message.
+        // if any is null, fail fast with a helpful message.
         if (textQuote == null || recyclerMainSessions == null || emptyMessage == null
                 || topAppBar == null || fabAdd == null || bottomNavigationView == null) {
             Toast.makeText(this, "Layout ids do not match activity_main.xml", Toast.LENGTH_LONG).show();
@@ -50,11 +49,8 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // ---- Session / login state ----
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         currentUser = prefs.getString(KEY_CURRENT_USER, null);
-
-
 
         // Redirect to LoginActivity if not logged in
         if (currentUser == null) {
@@ -63,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // ---- Toolbar menu (requires res/menu/top_app_bar_menu.xml) ----
+        // Toolbar menu (requires res/menu/top_app_bar_menu.xml)
         topAppBar.setOnMenuItemClickListener(item -> {
             int itemId = item.getItemId();
             if (itemId == R.id.action_refresh) {
@@ -77,21 +73,21 @@ public class MainActivity extends AppCompatActivity {
             return false;
         });
 
-        // ---- FAB ----
+        // FAB
         fabAdd.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, AddSessionActivity.class);
             startActivity(intent);
         });
 
-        // ---- RecyclerView inside ScrollView tweaks ----
+        //RecyclerView inside ScrollView tweaks
         recyclerMainSessions.setLayoutManager(new LinearLayoutManager(this));
         recyclerMainSessions.setNestedScrollingEnabled(false); // important with ScrollView
 
-        // ---- Load UI data ----
+        // Load UI data
         showRandomQuote();
         loadAllSessions();
 
-        // ---- Bottom Nav (requires res/menu/bottom_nav_menu.xml) ----
+        // Bottom Nav (requires res/menu/bottom_nav_menu.xml)
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.nav_timetable) {

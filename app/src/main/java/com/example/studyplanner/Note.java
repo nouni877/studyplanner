@@ -14,17 +14,17 @@ public class Note {
     private int subjectId;     // FK to Subject.id
     private String content;
 
-    // The ONLY constructor Room should use
+    // The only constructor Room should use
     public Note(String username, int subjectId, String content) {
         this.username = username;
         this.subjectId = subjectId;
         this.content = content;
     }
 
-    // (Optional) convenience constructor — NOT for Room
+    // convenience constructor
     @Ignore
     public Note(String username, String content) {
-        this(username, 0, content); // subjectId 0 if you ever need it
+        this(username, 0, content);
     }
 
     // Getters & setters

@@ -31,7 +31,7 @@ public class AddSessionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_session);
 
-        // ----- Toolbar -----
+        // Toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
@@ -39,7 +39,7 @@ public class AddSessionActivity extends AppCompatActivity {
         }
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
-        // ----- Initialize UI components -----
+        // Initialize UI components
         editTitle = findViewById(R.id.editTitle);
         editNotes = findViewById(R.id.editNotes);
         btnSelectDate = findViewById(R.id.btnSelectDate);
@@ -47,7 +47,7 @@ public class AddSessionActivity extends AppCompatActivity {
         btnSave = findViewById(R.id.btnSave);
         spinnerDay = findViewById(R.id.spinnerDay);
 
-        // ----- Get current logged-in username -----
+        // Get current logged-in username
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         currentUser = prefs.getString(KEY_CURRENT_USER, null);
 
@@ -57,10 +57,10 @@ public class AddSessionActivity extends AppCompatActivity {
             return;
         }
 
-        // ----- Initialize database -----
+        //  Initialize database
         db = SessionDatabase.getInstance(this);
 
-        // ----- Set listeners -----
+        // Set listeners
         btnSelectDate.setOnClickListener(v -> showDatePicker());
         btnSelectTime.setOnClickListener(v -> showTimePicker());
         btnSave.setOnClickListener(v -> saveSessionDirectly());
@@ -105,7 +105,7 @@ public class AddSessionActivity extends AppCompatActivity {
         String notes = editNotes.getText().toString().trim();
         String day = spinnerDay.getSelectedItem().toString();
 
-        // ----- Validation -----
+        // Validation
         if (title.isEmpty() || time.equals("Select Time") || selectedDate.isEmpty()) {
             Toast.makeText(this, "Please fill all fields before saving.", Toast.LENGTH_SHORT).show();
             return;
@@ -116,9 +116,9 @@ public class AddSessionActivity extends AppCompatActivity {
             return;
         }
 
-        // ----- Save session in background thread -----
+        //  Save session in background thread
         new Thread(() -> {
-            // ✅ Add username so this session belongs only to the logged-in user
+            // Add username so this session belongs only to the logged-in user
             PlannerSession session = new PlannerSession();
             session.setUsername(currentUser);
             session.setTitle(title);

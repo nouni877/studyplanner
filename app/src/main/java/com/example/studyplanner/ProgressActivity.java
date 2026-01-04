@@ -25,27 +25,27 @@ public class ProgressActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progress);
 
-        //  Initialize views
+        //Initialize views
         circularProgress = findViewById(R.id.circularProgress);
         weeklyProgress = findViewById(R.id.weeklyProgress);
         tvPercentage = findViewById(R.id.tvPercentage);
         tvSessions = findViewById(R.id.tvSessions);
         tvMotivation = findViewById(R.id.tvMotivation);
 
-        //  Reset Progress Button
+        //Reset Progress Button
         Button btnReset = findViewById(R.id.btnReset);
         btnReset.setOnClickListener(v -> resetProgress());
 
-        //  Setup toolbar
+        //Setup toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
-        //  Get database instance
+        // Get database instance
         sessionDatabase = SessionDatabase.getInstance(this);
 
-        // Load progress data
+        //Load progress data
         loadProgress();
     }
 
@@ -94,7 +94,7 @@ public class ProgressActivity extends AppCompatActivity {
                 sessionDatabase.sessionDao().update(s);
             }
 
-            //  Refresh UI
+            // Refresh UI
             runOnUiThread(this::loadProgress);
         }).start();
     }
@@ -124,7 +124,7 @@ public class ProgressActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        loadProgress(); // 🔥 Refresh every time you return to the screen
+        loadProgress(); // Refresh every time user return to the screen
     }
 
 }

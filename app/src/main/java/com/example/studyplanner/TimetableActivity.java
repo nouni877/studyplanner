@@ -41,7 +41,7 @@ public class TimetableActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        loadTimetable();   // 🔥 refresh every time user returns
+        loadTimetable();   // refresh every time user returns
     }
 
     private void loadTimetable() {
@@ -60,8 +60,6 @@ public class TimetableActivity extends AppCompatActivity {
             if (sessions != null) {
                 for (PlannerSession s : sessions) {
                     if (daySessions.containsKey(s.getDay())) {
-
-                        // Show ✔ if completed, • if not
                         String icon = s.isCompleted() ? "✔ " : "• ";
 
                         daySessions.get(s.getDay())
