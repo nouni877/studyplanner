@@ -16,7 +16,7 @@ public class PlannerSession {
     private String notes;
     private boolean completed;
 
-    // Empty constructor (required by Room)
+    // Empty constructor
     public PlannerSession() {
     }
 

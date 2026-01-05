@@ -79,9 +79,9 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        //RecyclerView inside ScrollView tweaks
+
         recyclerMainSessions.setLayoutManager(new LinearLayoutManager(this));
-        recyclerMainSessions.setNestedScrollingEnabled(false); // important with ScrollView
+        recyclerMainSessions.setNestedScrollingEnabled(false);
 
         // Load UI data
         showRandomQuote();
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
         loadAllSessions();
     }
 
-    /** Load all study sessions for the current user, safely */
+    /** Load all study sessions for the current user */
     private void loadAllSessions() {
         new Thread(() -> {
             List<PlannerSession> sessions;

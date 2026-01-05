@@ -20,7 +20,7 @@ public class SignupActivity extends AppCompatActivity {
 
     private static final String PREFS_NAME = "StudyPlannerPrefs";
     private static final String KEY_CURRENT_USER = "current_user";
-
+   // initialises the user interface for the sign-up screen and sets up event listeners for user interactions
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +38,7 @@ public class SignupActivity extends AppCompatActivity {
         btnBackToLogin.setOnClickListener(v ->
                 startActivity(new Intent(SignupActivity.this, LoginActivity.class)));
     }
-
+   // creating an account details
     private void createAccount() {
         String username = editNewUsername.getText().toString().trim();
         String password = editPassword.getText().toString().trim();

@@ -11,7 +11,7 @@ public class Note {
     private int id;
 
     private String username;   // owner
-    private int subjectId;     // FK to Subject.id
+    private int subjectId;
     private String content;
 
     // The only constructor Room should use

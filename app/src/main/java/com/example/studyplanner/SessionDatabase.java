@@ -28,7 +28,6 @@ public abstract class SessionDatabase extends RoomDatabase {
                             SessionDatabase.class,
                             "session_database"
                     )
-                    // This wipes and recreates the DB if schema/version changes,
                     .fallbackToDestructiveMigration()
                     .build();
         }

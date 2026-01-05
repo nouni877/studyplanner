@@ -22,10 +22,11 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     private OnTaskActionListener listener;
 
     public TaskAdapter(List<Task> taskList, OnTaskActionListener listener) {
+        //  List containing all task items
         this.taskList = taskList;
         this.listener = listener;
     }
-
+    // Constructor to initialise task list and action listener
     @NonNull
     @Override
     public TaskViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -47,7 +48,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         // Delete button click
         holder.btnDelete.setOnClickListener(v -> listener.onDelete(position));
     }
-
+   //   Returns total number of tasks
     @Override
     public int getItemCount() {
         return taskList.size();

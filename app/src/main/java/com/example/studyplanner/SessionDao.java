@@ -15,7 +15,7 @@ public interface SessionDao {
     @Insert
     void insert(PlannerSession session);
 
-    // Update existing session (e.g. mark completed)
+    // Update existing session
     @Update
     void update(PlannerSession session);
 
