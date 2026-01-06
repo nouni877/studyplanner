@@ -1,0 +1,44 @@
+Study Planner App instructions file
+
+Overview
+The Study Planner App is an Android application designed to help students organise and manage their study sessions.
+It allows users to create subjects, schedule study sessions, add notes, and track completion status.
+
+Features
+- User login and sign up
+- Create and manage subjects
+- Add study sessions with date and time
+- Edit sessions
+- delete sessions
+- Mark sessions as completed
+- Persistent data storage
+- read some motivational quotes
+-vew all upcoming and completed sessions
+
+Technologies Used
+- Java
+- Android Studio
+- Room Database
+- SharedPreferences
+- XML
+
+User Authentication
+The application uses SharedPreferences to store user login details locally on the device.
+This allows each user to access and manage their own study data.
+
+Data Storage
+The app uses the Room Database library to store subjects and study sessions.
+Each session includes a title, description, date, time, username, and completion status.
+
+How to Run the Application
+1. Open the project in Android Studio
+2. Sync Gradle files
+3. Run the app using an emulator or physical Android device
+4. You can either test by existing usernames and passwords like:
+- username: nadeen password: nadeen
+username: bora password: bora
+or you can create a new account where it will get you logged in.
+
+Student Information
+Name: Nadeen El Samad
+Student ID: 24800059
