@@ -5,7 +5,10 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-
+/*
+ * SessionDatabase is the main Room database class for the application.
+ * It defines the database configuration and provides access to DAOs.
+ */
 @Database(
         entities = {PlannerSession.class, Note.class, Subject.class},
         version = 4,
@@ -14,8 +17,10 @@ import androidx.room.RoomDatabase;
 public abstract class SessionDatabase extends RoomDatabase {
 
     private static SessionDatabase instance;
-
-    // DAOs
+    /*
+     * Data Access Objects (DAOs)
+     * These provide methods for interacting with the database
+     */
     public abstract SessionDao sessionDao();
     public abstract NoteDao noteDao();
     public abstract SubjectDao subjectDao();
