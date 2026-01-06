@@ -16,18 +16,22 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
-
+// Adapter class used to display study sessions in a RecyclerView
 public class SessionAdapter extends RecyclerView.Adapter<SessionAdapter.SessionViewHolder> {
 
     private final Context context;
+    //  List of study sessions retrieved from the Room database
     private final List<PlannerSession> sessions;
-    private final SessionDatabase db;
 
+    // Reference to the Room database for updating and deleting sessions
+    private final SessionDatabase db;
+    // Constructor to initialise context, session list, and database instance
     public SessionAdapter(Context context, List<PlannerSession> sessions, SessionDatabase db) {
         this.context = context;
         this.sessions = sessions;
         this.db = db;
     }
+    // Inflates the session item layout and creates the ViewHolder
 
     @NonNull
     @Override
@@ -96,7 +100,7 @@ public class SessionAdapter extends RecyclerView.Adapter<SessionAdapter.SessionV
     public int getItemCount() {
         return sessions.size();
     }
-
+    // ViewHolder class that holds references to session item views
     public static class SessionViewHolder extends RecyclerView.ViewHolder {
         TextView textTitle, textDayTime, textNotes;
         Button btnMarkCompleted, btnEdit, btnDelete;

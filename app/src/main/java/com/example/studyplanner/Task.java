@@ -1,5 +1,7 @@
 package com.example.studyplanner;
-
+// This class represents a task within the study planner application. It is used as a
+// data model to store task-related information such as the task title, description,
+// date, and time, allowing tasks to be displayed and managed within the app.
 public class Task {
     private String title;
     private String description;

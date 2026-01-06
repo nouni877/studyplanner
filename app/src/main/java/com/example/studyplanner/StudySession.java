@@ -1,5 +1,4 @@
 package com.example.studyplanner;
-
 public class StudySession {
     private String title;
     private String time;

@@ -1,5 +1,8 @@
 package com.example.studyplanner;
-
+// This class represents a Subject entity stored in the Room database. It is used to
+// save and manage subject information such as the subject name, associated user,
+// and display colour. The class is annotated as a Room entity, with an auto-generated
+// primary key, allowing subjects to be uniquely identified and persisted locally.
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
