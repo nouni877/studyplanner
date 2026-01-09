@@ -156,7 +156,6 @@ public class MainActivity extends AppCompatActivity {
         }).start();
     }
 
-    /** Logout user — clears only current session */
     private void logoutUser() {
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         prefs.edit().remove(KEY_CURRENT_USER).apply();
